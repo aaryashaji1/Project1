@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>String Reverse</title>
+        <h3>String Operations</h3>
+    </head>
+   
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+           $("#name").keyup(function()
+           {
+            var string=$("#name").val();
+                var rev=string.split('').reverse().join('');
+                $('#reverse').html(rev);
+                var len=($('#name').val().length);
+                $('#Stringlength').html(len);
+                var FirstLetter=string.charAt(0).toUpperCase();//upercase first letter
+                var stringslice = string.slice(1,len-2,len-1);// remove remaining character //remove 1st , second last and last character from string.
+        
+                var append = FirstLetter+stringslice;// concat 
+                var last = string.charAt(len-1).toUpperCase();
+                
+                var secondlast=string.charAt(len-2) .toUpperCase();
+                
+                var concat = append+secondlast+last;              
+                             
+                $("#capital").html(concat);
+                
+               
+            
+            }) ;
+            
+            
+        });       
+    </script>
+    <body>
+    Enter your name: <input type="text" id ="name"><br>
+   
+    <br> Reverse: <p id ="reverse"></p>
+    Length: <p id="Stringlength"> </p>
+    To Uppercase:<p id="capital"></p>
+    </body> 
+    
+</html>
